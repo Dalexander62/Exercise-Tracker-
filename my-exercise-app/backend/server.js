@@ -21,6 +21,12 @@ mongoose.connect(
   }
 );
 
+const exercisesRouter = require("./routes/exercises");
+const usersRouter = require("./routes/users");
+
+app.use("/exercises", exercisesRouter);
+app.use("/users", usersRouter);
+
 const server = app.listen(5015, () => {
   console.log(`Server is running on port: ${5015}`);
 });
